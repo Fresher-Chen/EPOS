@@ -52,6 +52,8 @@ public:
     QLineEdit *lineEdit;
     QLineEdit *lineEdit_2;
     QLineEdit *lineEdit_3;
+    QPushButton *pushButton_10;
+    QSpacerItem *verticalSpacer_12;
     QSpacerItem *horizontalSpacer;
     QFrame *line;
     QGridLayout *gridLayout_7;
@@ -76,6 +78,14 @@ public:
     QFrame *line_2;
     QSpacerItem *horizontalSpacer_2;
     QGridLayout *gridLayout_8;
+    QLCDNumber *lcdNumber_6;
+    QLCDNumber *lcdNumber_2;
+    QLCDNumber *lcdNumber_7;
+    QLCDNumber *lcdNumber_8;
+    QLCDNumber *lcdNumber_9;
+    QLCDNumber *lcdNumber_10;
+    QLabel *label_18;
+    QLabel *label_17;
     QLabel *label_14;
     QLCDNumber *lcdNumber;
     QSpacerItem *verticalSpacer_7;
@@ -91,14 +101,8 @@ public:
     QLabel *label_3;
     QSpacerItem *verticalSpacer_6;
     QLabel *label_10;
-    QLCDNumber *lcdNumber_2;
-    QLCDNumber *lcdNumber_6;
-    QLCDNumber *lcdNumber_7;
-    QLCDNumber *lcdNumber_8;
-    QLCDNumber *lcdNumber_9;
-    QLCDNumber *lcdNumber_10;
-    QLabel *label_17;
-    QLabel *label_18;
+    QPushButton *pushButton_11;
+    QSpacerItem *verticalSpacer_13;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -107,7 +111,7 @@ public:
     {
         if (epos3->objectName().isEmpty())
             epos3->setObjectName(QStringLiteral("epos3"));
-        epos3->resize(865, 495);
+        epos3->resize(874, 495);
         centralWidget = new QWidget(epos3);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         horizontalLayout_6 = new QHBoxLayout(centralWidget);
@@ -177,6 +181,15 @@ public:
         lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
 
         formLayout_9->setWidget(8, QFormLayout::FieldRole, lineEdit_3);
+
+        pushButton_10 = new QPushButton(centralWidget);
+        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
+
+        formLayout_9->setWidget(10, QFormLayout::LabelRole, pushButton_10);
+
+        verticalSpacer_12 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        formLayout_9->setItem(9, QFormLayout::LabelRole, verticalSpacer_12);
 
 
         horizontalLayout_6->addLayout(formLayout_9);
@@ -302,6 +315,71 @@ public:
         gridLayout_8 = new QGridLayout();
         gridLayout_8->setSpacing(6);
         gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
+        lcdNumber_6 = new QLCDNumber(centralWidget);
+        lcdNumber_6->setObjectName(QStringLiteral("lcdNumber_6"));
+        lcdNumber_6->setFrameShape(QFrame::Box);
+        lcdNumber_6->setDigitCount(8);
+        lcdNumber_6->setMode(QLCDNumber::Hex);
+        lcdNumber_6->setSegmentStyle(QLCDNumber::Flat);
+
+        gridLayout_8->addWidget(lcdNumber_6, 2, 2, 1, 1);
+
+        lcdNumber_2 = new QLCDNumber(centralWidget);
+        lcdNumber_2->setObjectName(QStringLiteral("lcdNumber_2"));
+        QFont font;
+        font.setFamily(QStringLiteral("Monospace"));
+        font.setPointSize(12);
+        lcdNumber_2->setFont(font);
+        lcdNumber_2->setDigitCount(4);
+        lcdNumber_2->setMode(QLCDNumber::Hex);
+        lcdNumber_2->setSegmentStyle(QLCDNumber::Flat);
+
+        gridLayout_8->addWidget(lcdNumber_2, 8, 1, 1, 1);
+
+        lcdNumber_7 = new QLCDNumber(centralWidget);
+        lcdNumber_7->setObjectName(QStringLiteral("lcdNumber_7"));
+        lcdNumber_7->setDigitCount(8);
+        lcdNumber_7->setMode(QLCDNumber::Hex);
+        lcdNumber_7->setSegmentStyle(QLCDNumber::Flat);
+
+        gridLayout_8->addWidget(lcdNumber_7, 4, 2, 1, 1);
+
+        lcdNumber_8 = new QLCDNumber(centralWidget);
+        lcdNumber_8->setObjectName(QStringLiteral("lcdNumber_8"));
+        lcdNumber_8->setDigitCount(8);
+        lcdNumber_8->setMode(QLCDNumber::Hex);
+        lcdNumber_8->setSegmentStyle(QLCDNumber::Flat);
+
+        gridLayout_8->addWidget(lcdNumber_8, 6, 2, 1, 1);
+
+        lcdNumber_9 = new QLCDNumber(centralWidget);
+        lcdNumber_9->setObjectName(QStringLiteral("lcdNumber_9"));
+        lcdNumber_9->setDigitCount(8);
+        lcdNumber_9->setMode(QLCDNumber::Hex);
+        lcdNumber_9->setSegmentStyle(QLCDNumber::Flat);
+
+        gridLayout_8->addWidget(lcdNumber_9, 8, 2, 1, 1);
+
+        lcdNumber_10 = new QLCDNumber(centralWidget);
+        lcdNumber_10->setObjectName(QStringLiteral("lcdNumber_10"));
+        lcdNumber_10->setDigitCount(8);
+        lcdNumber_10->setMode(QLCDNumber::Hex);
+        lcdNumber_10->setSegmentStyle(QLCDNumber::Flat);
+
+        gridLayout_8->addWidget(lcdNumber_10, 10, 2, 1, 1);
+
+        label_18 = new QLabel(centralWidget);
+        label_18->setObjectName(QStringLiteral("label_18"));
+        label_18->setAlignment(Qt::AlignCenter);
+
+        gridLayout_8->addWidget(label_18, 1, 2, 1, 1);
+
+        label_17 = new QLabel(centralWidget);
+        label_17->setObjectName(QStringLiteral("label_17"));
+        label_17->setAlignment(Qt::AlignCenter);
+
+        gridLayout_8->addWidget(label_17, 1, 1, 1, 1);
+
         label_14 = new QLabel(centralWidget);
         label_14->setObjectName(QStringLiteral("label_14"));
 
@@ -309,7 +387,65 @@ public:
 
         lcdNumber = new QLCDNumber(centralWidget);
         lcdNumber->setObjectName(QStringLiteral("lcdNumber"));
-        lcdNumber->setDigitCount(8);
+        QPalette palette;
+        QBrush brush(QColor(0, 0, 0, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        QBrush brush1(QColor(255, 255, 255, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Button, brush1);
+        palette.setBrush(QPalette::Active, QPalette::Light, brush1);
+        palette.setBrush(QPalette::Active, QPalette::Midlight, brush1);
+        QBrush brush2(QColor(127, 127, 127, 255));
+        brush2.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Dark, brush2);
+        QBrush brush3(QColor(170, 170, 170, 255));
+        brush3.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Mid, brush3);
+        palette.setBrush(QPalette::Active, QPalette::Text, brush);
+        palette.setBrush(QPalette::Active, QPalette::BrightText, brush1);
+        palette.setBrush(QPalette::Active, QPalette::ButtonText, brush);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Active, QPalette::Shadow, brush);
+        palette.setBrush(QPalette::Active, QPalette::AlternateBase, brush1);
+        QBrush brush4(QColor(255, 255, 220, 255));
+        brush4.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::ToolTipBase, brush4);
+        palette.setBrush(QPalette::Active, QPalette::ToolTipText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Button, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Light, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Midlight, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Dark, brush2);
+        palette.setBrush(QPalette::Inactive, QPalette::Mid, brush3);
+        palette.setBrush(QPalette::Inactive, QPalette::Text, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::BrightText, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Shadow, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush4);
+        palette.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
+        palette.setBrush(QPalette::Disabled, QPalette::Button, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Light, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Midlight, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Dark, brush2);
+        palette.setBrush(QPalette::Disabled, QPalette::Mid, brush3);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush2);
+        palette.setBrush(QPalette::Disabled, QPalette::BrightText, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush2);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Shadow, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush4);
+        palette.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush);
+        lcdNumber->setPalette(palette);
+        lcdNumber->setFont(font);
+        lcdNumber->setDigitCount(4);
         lcdNumber->setMode(QLCDNumber::Hex);
         lcdNumber->setSegmentStyle(QLCDNumber::Flat);
 
@@ -321,6 +457,7 @@ public:
 
         lcdNumber_3 = new QLCDNumber(centralWidget);
         lcdNumber_3->setObjectName(QStringLiteral("lcdNumber_3"));
+        lcdNumber_3->setFont(font);
         lcdNumber_3->setDigitCount(8);
         lcdNumber_3->setMode(QLCDNumber::Hex);
         lcdNumber_3->setSegmentStyle(QLCDNumber::Flat);
@@ -333,6 +470,7 @@ public:
 
         lcdNumber_4 = new QLCDNumber(centralWidget);
         lcdNumber_4->setObjectName(QStringLiteral("lcdNumber_4"));
+        lcdNumber_4->setFont(font);
         lcdNumber_4->setDigitCount(8);
         lcdNumber_4->setMode(QLCDNumber::Hex);
         lcdNumber_4->setSegmentStyle(QLCDNumber::Flat);
@@ -341,10 +479,11 @@ public:
 
         lcdNumber_5 = new QLCDNumber(centralWidget);
         lcdNumber_5->setObjectName(QStringLiteral("lcdNumber_5"));
+        lcdNumber_5->setFont(font);
         lcdNumber_5->setFrameShape(QFrame::Box);
         lcdNumber_5->setLineWidth(1);
         lcdNumber_5->setMidLineWidth(0);
-        lcdNumber_5->setDigitCount(8);
+        lcdNumber_5->setDigitCount(2);
         lcdNumber_5->setMode(QLCDNumber::Hex);
         lcdNumber_5->setSegmentStyle(QLCDNumber::Flat);
         lcdNumber_5->setProperty("value", QVariant(0));
@@ -389,66 +528,14 @@ public:
 
         gridLayout_8->addWidget(label_10, 2, 0, 1, 1);
 
-        lcdNumber_2 = new QLCDNumber(centralWidget);
-        lcdNumber_2->setObjectName(QStringLiteral("lcdNumber_2"));
-        lcdNumber_2->setDigitCount(8);
-        lcdNumber_2->setMode(QLCDNumber::Hex);
-        lcdNumber_2->setSegmentStyle(QLCDNumber::Flat);
+        pushButton_11 = new QPushButton(centralWidget);
+        pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
 
-        gridLayout_8->addWidget(lcdNumber_2, 8, 1, 1, 1);
+        gridLayout_8->addWidget(pushButton_11, 12, 1, 1, 1);
 
-        lcdNumber_6 = new QLCDNumber(centralWidget);
-        lcdNumber_6->setObjectName(QStringLiteral("lcdNumber_6"));
-        lcdNumber_6->setFrameShape(QFrame::Box);
-        lcdNumber_6->setDigitCount(8);
-        lcdNumber_6->setMode(QLCDNumber::Hex);
-        lcdNumber_6->setSegmentStyle(QLCDNumber::Flat);
+        verticalSpacer_13 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_8->addWidget(lcdNumber_6, 2, 2, 1, 1);
-
-        lcdNumber_7 = new QLCDNumber(centralWidget);
-        lcdNumber_7->setObjectName(QStringLiteral("lcdNumber_7"));
-        lcdNumber_7->setDigitCount(8);
-        lcdNumber_7->setMode(QLCDNumber::Hex);
-        lcdNumber_7->setSegmentStyle(QLCDNumber::Flat);
-
-        gridLayout_8->addWidget(lcdNumber_7, 4, 2, 1, 1);
-
-        lcdNumber_8 = new QLCDNumber(centralWidget);
-        lcdNumber_8->setObjectName(QStringLiteral("lcdNumber_8"));
-        lcdNumber_8->setDigitCount(8);
-        lcdNumber_8->setMode(QLCDNumber::Hex);
-        lcdNumber_8->setSegmentStyle(QLCDNumber::Flat);
-
-        gridLayout_8->addWidget(lcdNumber_8, 6, 2, 1, 1);
-
-        lcdNumber_9 = new QLCDNumber(centralWidget);
-        lcdNumber_9->setObjectName(QStringLiteral("lcdNumber_9"));
-        lcdNumber_9->setDigitCount(8);
-        lcdNumber_9->setMode(QLCDNumber::Hex);
-        lcdNumber_9->setSegmentStyle(QLCDNumber::Flat);
-
-        gridLayout_8->addWidget(lcdNumber_9, 8, 2, 1, 1);
-
-        lcdNumber_10 = new QLCDNumber(centralWidget);
-        lcdNumber_10->setObjectName(QStringLiteral("lcdNumber_10"));
-        lcdNumber_10->setDigitCount(8);
-        lcdNumber_10->setMode(QLCDNumber::Hex);
-        lcdNumber_10->setSegmentStyle(QLCDNumber::Flat);
-
-        gridLayout_8->addWidget(lcdNumber_10, 10, 2, 1, 1);
-
-        label_17 = new QLabel(centralWidget);
-        label_17->setObjectName(QStringLiteral("label_17"));
-        label_17->setAlignment(Qt::AlignCenter);
-
-        gridLayout_8->addWidget(label_17, 1, 1, 1, 1);
-
-        label_18 = new QLabel(centralWidget);
-        label_18->setObjectName(QStringLiteral("label_18"));
-        label_18->setAlignment(Qt::AlignCenter);
-
-        gridLayout_8->addWidget(label_18, 1, 2, 1, 1);
+        gridLayout_8->addItem(verticalSpacer_13, 11, 1, 1, 1);
 
 
         horizontalLayout_6->addLayout(gridLayout_8);
@@ -456,7 +543,7 @@ public:
         epos3->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(epos3);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 865, 19));
+        menuBar->setGeometry(QRect(0, 0, 874, 19));
         epos3->setMenuBar(menuBar);
         mainToolBar = new QToolBar(epos3);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -486,6 +573,7 @@ public:
         lineEdit->setText(QApplication::translate("epos3", "0", 0));
         lineEdit_2->setText(QApplication::translate("epos3", "0", 0));
         lineEdit_3->setText(QApplication::translate("epos3", "0", 0));
+        pushButton_10->setText(QApplication::translate("epos3", "Apply", 0));
         pushButton_7->setText(QApplication::translate("epos3", "Pause", 0));
         pushButton_4->setText(QApplication::translate("epos3", "Move Backward", 0));
         pushButton->setText(QApplication::translate("epos3", "Move Backward", 0));
@@ -500,14 +588,15 @@ public:
         label_8->setText(QApplication::translate("epos3", "Motor 1", 0));
         pushButton_8->setText(QApplication::translate("epos3", "Stop", 0));
         label_16->setText(QApplication::translate("epos3", "Change velocity", 0));
+        label_18->setText(QApplication::translate("epos3", "Motor 2", 0));
+        label_17->setText(QApplication::translate("epos3", "Motor 1", 0));
         label_14->setText(QApplication::translate("epos3", "Status Word", 0));
         label_12->setText(QApplication::translate("epos3", "Actual Velocity", 0));
         label_11->setText(QApplication::translate("epos3", "Actual Position", 0));
         label_13->setText(QApplication::translate("epos3", "Control Word", 0));
         label_3->setText(QApplication::translate("epos3", "Monitor", 0));
         label_10->setText(QApplication::translate("epos3", "Actual Operation Mode", 0));
-        label_17->setText(QApplication::translate("epos3", "Motor 1", 0));
-        label_18->setText(QApplication::translate("epos3", "Motor 2", 0));
+        pushButton_11->setText(QApplication::translate("epos3", "Read Values", 0));
     } // retranslateUi
 
 };
