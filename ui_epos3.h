@@ -459,7 +459,7 @@ public:
         lcdNumber_3->setObjectName(QStringLiteral("lcdNumber_3"));
         lcdNumber_3->setFont(font);
         lcdNumber_3->setDigitCount(8);
-        lcdNumber_3->setMode(QLCDNumber::Hex);
+        lcdNumber_3->setMode(QLCDNumber::Dec);
         lcdNumber_3->setSegmentStyle(QLCDNumber::Flat);
 
         gridLayout_8->addWidget(lcdNumber_3, 6, 1, 1, 1);
@@ -472,7 +472,7 @@ public:
         lcdNumber_4->setObjectName(QStringLiteral("lcdNumber_4"));
         lcdNumber_4->setFont(font);
         lcdNumber_4->setDigitCount(8);
-        lcdNumber_4->setMode(QLCDNumber::Hex);
+        lcdNumber_4->setMode(QLCDNumber::Dec);
         lcdNumber_4->setSegmentStyle(QLCDNumber::Flat);
 
         gridLayout_8->addWidget(lcdNumber_4, 4, 1, 1, 1);
@@ -570,8 +570,8 @@ public:
         label_6->setText(QApplication::translate("epos3", "Target Position", 0));
         label_5->setText(QApplication::translate("epos3", "Target Velocity", 0));
         label_7->setText(QApplication::translate("epos3", "TextLabel", 0));
-        lineEdit->setText(QApplication::translate("epos3", "0", 0));
-        lineEdit_2->setText(QApplication::translate("epos3", "0", 0));
+        lineEdit->setText(QApplication::translate("epos3", "100000", 0));
+        lineEdit_2->setText(QApplication::translate("epos3", "1000", 0));
         lineEdit_3->setText(QApplication::translate("epos3", "0", 0));
         pushButton_10->setText(QApplication::translate("epos3", "Apply", 0));
         pushButton_7->setText(QApplication::translate("epos3", "Pause", 0));

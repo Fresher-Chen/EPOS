@@ -53,7 +53,8 @@ int Epos3ReadWriteLib::sendUploadCommand(string positionStr, string regStr, stri
 		cout<<"ckeck1"<< positions<<endl;						
 
 		
-					try {
+                    try
+                    {
 						cout<<"ckeck2:"<< positions<<endl;	
 						cmd->setMasters(masters);
 						cout<<"cmd->setMasters(masters):"<< masters<<endl;
@@ -77,16 +78,19 @@ int Epos3ReadWriteLib::sendUploadCommand(string positionStr, string regStr, stri
 						cout<<"cmd->setForce(force):"<< force<<endl;																	
 						cmd->execute(commandArgs);
 						retval = cmd->getRegValue();
-					} catch (InvalidUsageException &e) {
-						cerr << e.what() << endl << endl;
-	
-						
-						if(e.what()=="Failed to download SDO: Input/output error")
+                    }
+                    catch (InvalidUsageException &e)
+                    {
+                        cerr <<"cerr"<<e.what()<<"<->"<< endl << endl;
+							
+                        if(e.what()=="  Failed to download SDO: Input/output error")
 						{
 							cout<<"Catch!!!!!!!!!!!!!!"<<endl;
-						}
-						retval = -1;
-					}					
+                        }else
+                        {
+						retval = -1;					
+                        }
+                    }
 		
 		return retval;
 }
@@ -141,29 +145,36 @@ int Epos3ReadWriteLib::sendDownloadCommand(string positionStr, string regStr, st
 						cout<<"cmd->setForce(force)"<< force<<endl;																	
 						cmd->execute(commandArgs);
 					} catch (InvalidUsageException &e) {
-						cerr << e.what() << endl << endl;
-						retval = 1;
+                        cerr <<"cerr"<<e.what()<<"<->"<< endl << endl;
+
+                        if(e.what()=="  Failed to download SDO: Input/output error")
+                        {
+                            cout<<"Catch!!!!!!!!!!!!!!"<<endl;
+                        }else
+                        {
+                        retval = -1;
+                        }
 					}
 					
 					
 		return retval;
 }
 
-void moveMotor( int newtargerPosition, int profileVelocity )
+void Epos3ReadWriteLib::moveMotor( string pos, string newtargerPosition, string profileVelocity )
 {
-    char temp[11];
-    string pos;
+  /*  char temp[11];
+ //   string pos;
     string newVel;
 
-    sprintf(temp,"%x",newtargerPosition);
-    pos = "0x" + string(temp);
+//    sprintf(temp,"%x",newtargerPosition);
+//    pos = "0x" + string(temp);
 
 
-    sprintf(temp,"%x",profileVelocity);
-    newVel = "0x" + string(temp);
+ //   sprintf(temp,"%x",profileVelocity);
+  //  newVel = "0x" + string(temp);*/
 
-    sendDownloadCommand("0", "0x607A", "0", "uint32",pos);
-    sendDownloadCommand("0", "0x6081", "0", "uint32",newVel);
-    sendDownloadCommand("0", "0x6040", "0", "uint16","0x006f");
-    sendDownloadCommand("0", "0x6040", "0", "uint16","0x007f");
+    sendDownloadCommand(pos, "0x607A", "0", "uint32",newtargerPosition);
+    sendDownloadCommand(pos, "0x6081", "0", "uint32",profileVelocity);
+    sendDownloadCommand(pos, "0x6040", "0", "uint16","0x006f");
+    sendDownloadCommand(pos, "0x6040", "0", "uint16","0x007f");
 }

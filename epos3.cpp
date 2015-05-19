@@ -27,9 +27,7 @@ epos3::~epos3()
 void epos3::on_pushButton_9_clicked()
 {
 
-    //epos3Lib = new Epos3ReadWriteLib();
     epos3Lib.initEPOS3();
-
 }
 void epos3::on_pushButton_3_clicked()
 {
@@ -100,4 +98,40 @@ void epos3::on_pushButton_11_clicked()
     ui->lcdNumber_3->display(actualVelocity_int);
     ui->lcdNumber_2->display(controlWord_int);
     ui->lcdNumber->display(statusWord_int);
+}
+
+
+
+
+void epos3::on_pushButton_clicked()
+{
+    QString targetPosition,targetVelocity;
+    char newTargetPosition_chr[11];
+    string newTargetPosition_str;
+    int newTargetPosition_int;
+
+    targetPosition = ui->lineEdit->text();
+    targetVelocity = ui->lineEdit_2->text();
+
+
+    newTargetPosition_int = 0xffffffff - targetPosition.toInt() + 1;
+
+    sprintf(newTargetPosition_chr,"%x",newTargetPosition_int);
+
+    newTargetPosition_str = "0x" + string(newTargetPosition_chr);
+
+
+    epos3Lib.moveMotor("0", newTargetPosition_str,targetVelocity.toStdString() );
+}
+
+void epos3::on_pushButton_2_clicked()
+{
+
+    QString targetPosition,targetVelocity;
+
+    targetPosition = ui->lineEdit->text();
+    targetVelocity = ui->lineEdit_2->text();
+
+    epos3Lib.moveMotor("0",targetPosition.toStdString(),targetVelocity.toStdString() );
+
 }

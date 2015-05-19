@@ -492,7 +492,7 @@ void MasterDevice::sdoDownload(ec_ioctl_slave_sdo_download_t *data)
             throw MasterDeviceSdoAbortException(data->abort_code);
         } else {
             err << "Failed to download SDO: " << strerror(errno);
-            throw MasterDeviceException(err);
+            //throw MasterDeviceException(err);
         }
     }
 }
