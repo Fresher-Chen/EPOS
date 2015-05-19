@@ -148,3 +148,22 @@ int Epos3ReadWriteLib::sendDownloadCommand(string positionStr, string regStr, st
 					
 		return retval;
 }
+
+void moveMotor( int newtargerPosition, int profileVelocity )
+{
+    char temp[11];
+    string pos;
+    string newVel;
+
+    sprintf(temp,"%x",newtargerPosition);
+    pos = "0x" + string(temp);
+
+
+    sprintf(temp,"%x",profileVelocity);
+    newVel = "0x" + string(temp);
+
+    sendDownloadCommand("0", "0x607A", "0", "uint32",pos);
+    sendDownloadCommand("0", "0x6081", "0", "uint32",newVel);
+    sendDownloadCommand("0", "0x6040", "0", "uint16","0x006f");
+    sendDownloadCommand("0", "0x6040", "0", "uint16","0x007f");
+}

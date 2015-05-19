@@ -40,6 +40,7 @@ string skin;
 void initEPOS3();
 int sendUploadCommand(string, string, string, string);
 int sendDownloadCommand(string, string, string, string, string);
+void moveMotor( int, int );
 
 };
 /*****************************************************************************/

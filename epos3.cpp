@@ -31,7 +31,25 @@ void epos3::on_pushButton_9_clicked()
     epos3Lib.initEPOS3();
 
 }
+void epos3::on_pushButton_3_clicked()
+{
+    epos3Lib.sendDownloadCommand("0","0x6040","0","uint16","0x017f");
+}
 
+void epos3::on_pushButton_5_clicked()
+{
+    epos3Lib.sendDownloadCommand("0","0x6040","0","uint16","0x02");
+}
+
+void epos3::on_pushButton_7_clicked()
+{
+    epos3Lib.sendDownloadCommand("1","0x6040","0","uint16","0x017f");
+}
+
+void epos3::on_pushButton_8_clicked()
+{
+    epos3Lib.sendDownloadCommand("1","0x6040","0","uint16","0x02");
+}
 void epos3::on_pushButton_10_clicked()
 {
     int index,motor0, motor1;
