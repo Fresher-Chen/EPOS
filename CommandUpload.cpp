@@ -29,17 +29,21 @@
 
 #include <iostream>
 #include <iomanip>
-using namespace std;
+
 
 #include "CommandUpload.h"
 #include "MasterDevice.h"
 #include <stdio.h>
+#include <string>
+
+using namespace std;
 
 /**
  * Added bay Oscar Caravaca 14/05/2015
  * Global to store the returning value of any EPOS3 register after sending an Upload command 
  **/
 int regValue;
+Command::StringVector dataBuffer;
 
 
 /*****************************************************************************/
@@ -184,8 +188,14 @@ void CommandUpload::execute(const StringVector &args)
     }
 
 	/*Added by Oscar Caravaca 14/05/2015*/
-	convertToIntegerDataTarget(data.target, data.data_size);
-
+    if(args[0] == "0x201B")
+    {
+        convertToIntegerDataTargetBuffer(data.target, data.data_size);
+    }
+    else
+    {
+        convertToIntegerDataTarget(data.target, data.data_size);
+    }
     delete [] data.target;
 }
 
@@ -198,8 +208,7 @@ void CommandUpload::execute(const StringVector &args)
  * @return void: change the globa variable regValue. 
  */
 void CommandUpload::convertToIntegerDataTarget(const uint8_t *data_target, int data_size)
-{
-	string val = "";	
+{	
 	int temp = 0;
 	
 	for(int i=0;i < data_size ; i++)
@@ -209,16 +218,56 @@ void CommandUpload::convertToIntegerDataTarget(const uint8_t *data_target, int d
 
 	regValue = temp;
 }
-
 /*****************************************************************************/
 /**
  * Added by Oscar Caravaca 14/05/2015.
- * This method return the value of the global variable regValue which containt.
+ * This method convert the array data.target to integer number representation.
+ * @param const uint8_t *data_target: array of char which contains the output value.
+ * @param int data_size: size of the array.
+ * @return void: change the globa variable regValue.
+ */
+void CommandUpload::convertToIntegerDataTargetBuffer(const uint8_t *data_target, int data_size)
+{
+    int temp;
+    char val[2];
+    dataBuffer.clear();
+
+   // dataBuffer.clear();
+
+    cout << "Buffer data_size: "<<data_size<<endl;
+
+    for(int d=0;d < data_size ; d=d+4)
+    {
+      temp = 0;
+            for(int i=d;i < (d+2) ; i++)
+            {
+                temp = temp + int(data_target[i]<<(i*8));
+            }
+            sprintf(val, "%d",temp);
+            dataBuffer.push_back(val);          
+    }    
+
+}
+/*****************************************************************************/
+/**
+ * Added by Oscar Caravaca 14/05/2015.
+ * This method return the value of the global variable regValue which containt the date returned by upload command.
  * @param no parameters. 
  * @return int: retunr the value of the global regValue.
  */
 int CommandUpload::getRegValue()
 {
 	 return regValue;
+}
+/*****************************************************************************/
+/**
+ * Added by Oscar Caravaca 14/05/2015.
+ * This method return the value of the global variable dataBuffer which containt the date returned by upload command.
+ * @param no parameters.
+ * @return int: return the value of the global dataBuffer.
+ */
+Command::StringVector CommandUpload::getRegValueBuffer()
+{
+     return dataBuffer;
 }
 

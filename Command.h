@@ -39,6 +39,7 @@ using namespace std;
 
 #include "../master/ioctl.h"
 
+
 class MasterDevice;
 
 /****************************************************************************/

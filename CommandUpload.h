@@ -42,7 +42,9 @@ class CommandUpload:
         string helpString(const string &) const;
         void execute(const StringVector &);
         void convertToIntegerDataTarget(const uint8_t *,int);
-        int getRegValue();        
+        void convertToIntegerDataTargetBuffer(const uint8_t *,int);
+        int getRegValue();
+        Command::StringVector getRegValueBuffer();
 
     protected:
         enum {DefaultBufferSize = 64 * 1024};

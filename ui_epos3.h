@@ -18,7 +18,6 @@
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
@@ -30,6 +29,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
+#include "qcustomplot.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -37,25 +37,9 @@ class Ui_epos3
 {
 public:
     QWidget *centralWidget;
-    QHBoxLayout *horizontalLayout_6;
-    QFormLayout *formLayout_9;
-    QLabel *label;
-    QSpacerItem *verticalSpacer;
-    QLabel *label_4;
-    QComboBox *comboBox;
-    QSpacerItem *verticalSpacer_2;
-    QLabel *label_6;
-    QSpacerItem *verticalSpacer_3;
-    QLabel *label_5;
-    QSpacerItem *verticalSpacer_4;
-    QLabel *label_7;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
-    QLineEdit *lineEdit_3;
-    QPushButton *pushButton_10;
-    QSpacerItem *verticalSpacer_12;
+    QGridLayout *gridLayout;
+    QCustomPlot *widget;
     QSpacerItem *horizontalSpacer;
-    QFrame *line;
     QGridLayout *gridLayout_7;
     QPushButton *pushButton_7;
     QPushButton *pushButton_4;
@@ -75,9 +59,28 @@ public:
     QDial *dial_2;
     QLabel *label_16;
     QSpacerItem *verticalSpacer_11;
+    QFrame *line;
+    QFormLayout *formLayout_9;
+    QLabel *label;
+    QSpacerItem *verticalSpacer;
+    QLabel *label_4;
+    QComboBox *comboBox;
+    QSpacerItem *verticalSpacer_2;
+    QLabel *label_6;
+    QSpacerItem *verticalSpacer_3;
+    QLabel *label_5;
+    QSpacerItem *verticalSpacer_4;
+    QLabel *label_7;
+    QLineEdit *lineEdit;
+    QLineEdit *lineEdit_2;
+    QLineEdit *lineEdit_3;
+    QPushButton *pushButton_10;
+    QSpacerItem *verticalSpacer_12;
     QFrame *line_2;
     QSpacerItem *horizontalSpacer_2;
     QGridLayout *gridLayout_8;
+    QLabel *label_19;
+    QLabel *label_3;
     QLCDNumber *lcdNumber_6;
     QLCDNumber *lcdNumber_2;
     QLCDNumber *lcdNumber_7;
@@ -89,20 +92,26 @@ public:
     QLabel *label_14;
     QLCDNumber *lcdNumber;
     QSpacerItem *verticalSpacer_7;
+    QLCDNumber *lcdNumber_4;
     QLCDNumber *lcdNumber_3;
     QSpacerItem *verticalSpacer_5;
-    QLCDNumber *lcdNumber_4;
-    QLCDNumber *lcdNumber_5;
     QLabel *label_12;
-    QSpacerItem *verticalSpacer_8;
     QLabel *label_11;
+    QLCDNumber *lcdNumber_5;
+    QSpacerItem *verticalSpacer_8;
     QSpacerItem *verticalSpacer_9;
     QLabel *label_13;
-    QLabel *label_3;
     QSpacerItem *verticalSpacer_6;
     QLabel *label_10;
-    QPushButton *pushButton_11;
     QSpacerItem *verticalSpacer_13;
+    QPushButton *pushButton_11;
+    QLCDNumber *lcdNumber_12;
+    QLCDNumber *lcdNumber_11;
+    QFrame *line_3;
+    QFrame *line_4;
+    QFrame *line_7;
+    QFrame *line_6;
+    QFrame *line_5;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -111,99 +120,22 @@ public:
     {
         if (epos3->objectName().isEmpty())
             epos3->setObjectName(QStringLiteral("epos3"));
-        epos3->resize(874, 495);
+        epos3->resize(891, 686);
         centralWidget = new QWidget(epos3);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        horizontalLayout_6 = new QHBoxLayout(centralWidget);
-        horizontalLayout_6->setSpacing(6);
-        horizontalLayout_6->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
-        formLayout_9 = new QFormLayout();
-        formLayout_9->setSpacing(6);
-        formLayout_9->setObjectName(QStringLiteral("formLayout_9"));
-        label = new QLabel(centralWidget);
-        label->setObjectName(QStringLiteral("label"));
+        gridLayout = new QGridLayout(centralWidget);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        widget = new QCustomPlot(centralWidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setMinimumSize(QSize(250, 250));
 
-        formLayout_9->setWidget(0, QFormLayout::LabelRole, label);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        formLayout_9->setItem(1, QFormLayout::LabelRole, verticalSpacer);
-
-        label_4 = new QLabel(centralWidget);
-        label_4->setObjectName(QStringLiteral("label_4"));
-
-        formLayout_9->setWidget(2, QFormLayout::LabelRole, label_4);
-
-        comboBox = new QComboBox(centralWidget);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-
-        formLayout_9->setWidget(2, QFormLayout::FieldRole, comboBox);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        formLayout_9->setItem(3, QFormLayout::LabelRole, verticalSpacer_2);
-
-        label_6 = new QLabel(centralWidget);
-        label_6->setObjectName(QStringLiteral("label_6"));
-
-        formLayout_9->setWidget(4, QFormLayout::LabelRole, label_6);
-
-        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        formLayout_9->setItem(5, QFormLayout::LabelRole, verticalSpacer_3);
-
-        label_5 = new QLabel(centralWidget);
-        label_5->setObjectName(QStringLiteral("label_5"));
-
-        formLayout_9->setWidget(6, QFormLayout::LabelRole, label_5);
-
-        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        formLayout_9->setItem(7, QFormLayout::LabelRole, verticalSpacer_4);
-
-        label_7 = new QLabel(centralWidget);
-        label_7->setObjectName(QStringLiteral("label_7"));
-
-        formLayout_9->setWidget(8, QFormLayout::LabelRole, label_7);
-
-        lineEdit = new QLineEdit(centralWidget);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-
-        formLayout_9->setWidget(4, QFormLayout::FieldRole, lineEdit);
-
-        lineEdit_2 = new QLineEdit(centralWidget);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-
-        formLayout_9->setWidget(6, QFormLayout::FieldRole, lineEdit_2);
-
-        lineEdit_3 = new QLineEdit(centralWidget);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
-
-        formLayout_9->setWidget(8, QFormLayout::FieldRole, lineEdit_3);
-
-        pushButton_10 = new QPushButton(centralWidget);
-        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
-
-        formLayout_9->setWidget(10, QFormLayout::LabelRole, pushButton_10);
-
-        verticalSpacer_12 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        formLayout_9->setItem(9, QFormLayout::LabelRole, verticalSpacer_12);
-
-
-        horizontalLayout_6->addLayout(formLayout_9);
+        gridLayout->addWidget(widget, 2, 6, 1, 1);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_6->addItem(horizontalSpacer);
-
-        line = new QFrame(centralWidget);
-        line->setObjectName(QStringLiteral("line"));
-        line->setFrameShape(QFrame::VLine);
-        line->setFrameShadow(QFrame::Sunken);
-
-        horizontalLayout_6->addWidget(line);
+        gridLayout->addItem(horizontalSpacer, 0, 1, 1, 1);
 
         gridLayout_7 = new QGridLayout();
         gridLayout_7->setSpacing(6);
@@ -299,22 +231,115 @@ public:
         gridLayout_7->addItem(verticalSpacer_11, 11, 2, 1, 1);
 
 
-        horizontalLayout_6->addLayout(gridLayout_7);
+        gridLayout->addLayout(gridLayout_7, 0, 3, 1, 1);
+
+        line = new QFrame(centralWidget);
+        line->setObjectName(QStringLiteral("line"));
+        line->setFrameShape(QFrame::VLine);
+        line->setFrameShadow(QFrame::Sunken);
+
+        gridLayout->addWidget(line, 0, 2, 1, 1);
+
+        formLayout_9 = new QFormLayout();
+        formLayout_9->setSpacing(6);
+        formLayout_9->setObjectName(QStringLiteral("formLayout_9"));
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+
+        formLayout_9->setWidget(0, QFormLayout::LabelRole, label);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        formLayout_9->setItem(1, QFormLayout::LabelRole, verticalSpacer);
+
+        label_4 = new QLabel(centralWidget);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        formLayout_9->setWidget(2, QFormLayout::LabelRole, label_4);
+
+        comboBox = new QComboBox(centralWidget);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+
+        formLayout_9->setWidget(2, QFormLayout::FieldRole, comboBox);
+
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        formLayout_9->setItem(3, QFormLayout::LabelRole, verticalSpacer_2);
+
+        label_6 = new QLabel(centralWidget);
+        label_6->setObjectName(QStringLiteral("label_6"));
+
+        formLayout_9->setWidget(4, QFormLayout::LabelRole, label_6);
+
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        formLayout_9->setItem(5, QFormLayout::LabelRole, verticalSpacer_3);
+
+        label_5 = new QLabel(centralWidget);
+        label_5->setObjectName(QStringLiteral("label_5"));
+
+        formLayout_9->setWidget(6, QFormLayout::LabelRole, label_5);
+
+        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        formLayout_9->setItem(7, QFormLayout::LabelRole, verticalSpacer_4);
+
+        label_7 = new QLabel(centralWidget);
+        label_7->setObjectName(QStringLiteral("label_7"));
+
+        formLayout_9->setWidget(8, QFormLayout::LabelRole, label_7);
+
+        lineEdit = new QLineEdit(centralWidget);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+
+        formLayout_9->setWidget(4, QFormLayout::FieldRole, lineEdit);
+
+        lineEdit_2 = new QLineEdit(centralWidget);
+        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+
+        formLayout_9->setWidget(6, QFormLayout::FieldRole, lineEdit_2);
+
+        lineEdit_3 = new QLineEdit(centralWidget);
+        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+
+        formLayout_9->setWidget(8, QFormLayout::FieldRole, lineEdit_3);
+
+        pushButton_10 = new QPushButton(centralWidget);
+        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
+
+        formLayout_9->setWidget(10, QFormLayout::LabelRole, pushButton_10);
+
+        verticalSpacer_12 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        formLayout_9->setItem(9, QFormLayout::LabelRole, verticalSpacer_12);
+
+
+        gridLayout->addLayout(formLayout_9, 0, 0, 1, 1);
 
         line_2 = new QFrame(centralWidget);
         line_2->setObjectName(QStringLiteral("line_2"));
         line_2->setFrameShape(QFrame::VLine);
         line_2->setFrameShadow(QFrame::Sunken);
 
-        horizontalLayout_6->addWidget(line_2);
+        gridLayout->addWidget(line_2, 0, 4, 1, 1);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_6->addItem(horizontalSpacer_2);
+        gridLayout->addItem(horizontalSpacer_2, 0, 5, 1, 1);
 
         gridLayout_8 = new QGridLayout();
         gridLayout_8->setSpacing(6);
         gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
+        label_19 = new QLabel(centralWidget);
+        label_19->setObjectName(QStringLiteral("label_19"));
+
+        gridLayout_8->addWidget(label_19, 12, 0, 1, 1);
+
+        label_3 = new QLabel(centralWidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+
+        gridLayout_8->addWidget(label_3, 0, 0, 1, 1);
+
         lcdNumber_6 = new QLCDNumber(centralWidget);
         lcdNumber_6->setObjectName(QStringLiteral("lcdNumber_6"));
         lcdNumber_6->setFrameShape(QFrame::Box);
@@ -455,6 +480,15 @@ public:
 
         gridLayout_8->addItem(verticalSpacer_7, 5, 0, 1, 1);
 
+        lcdNumber_4 = new QLCDNumber(centralWidget);
+        lcdNumber_4->setObjectName(QStringLiteral("lcdNumber_4"));
+        lcdNumber_4->setFont(font);
+        lcdNumber_4->setDigitCount(8);
+        lcdNumber_4->setMode(QLCDNumber::Dec);
+        lcdNumber_4->setSegmentStyle(QLCDNumber::Flat);
+
+        gridLayout_8->addWidget(lcdNumber_4, 4, 1, 1, 1);
+
         lcdNumber_3 = new QLCDNumber(centralWidget);
         lcdNumber_3->setObjectName(QStringLiteral("lcdNumber_3"));
         lcdNumber_3->setFont(font);
@@ -468,14 +502,15 @@ public:
 
         gridLayout_8->addItem(verticalSpacer_5, 1, 0, 1, 1);
 
-        lcdNumber_4 = new QLCDNumber(centralWidget);
-        lcdNumber_4->setObjectName(QStringLiteral("lcdNumber_4"));
-        lcdNumber_4->setFont(font);
-        lcdNumber_4->setDigitCount(8);
-        lcdNumber_4->setMode(QLCDNumber::Dec);
-        lcdNumber_4->setSegmentStyle(QLCDNumber::Flat);
+        label_12 = new QLabel(centralWidget);
+        label_12->setObjectName(QStringLiteral("label_12"));
 
-        gridLayout_8->addWidget(lcdNumber_4, 4, 1, 1, 1);
+        gridLayout_8->addWidget(label_12, 6, 0, 1, 1);
+
+        label_11 = new QLabel(centralWidget);
+        label_11->setObjectName(QStringLiteral("label_11"));
+
+        gridLayout_8->addWidget(label_11, 4, 0, 1, 1);
 
         lcdNumber_5 = new QLCDNumber(centralWidget);
         lcdNumber_5->setObjectName(QStringLiteral("lcdNumber_5"));
@@ -491,19 +526,9 @@ public:
 
         gridLayout_8->addWidget(lcdNumber_5, 2, 1, 1, 1);
 
-        label_12 = new QLabel(centralWidget);
-        label_12->setObjectName(QStringLiteral("label_12"));
-
-        gridLayout_8->addWidget(label_12, 6, 0, 1, 1);
-
         verticalSpacer_8 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout_8->addItem(verticalSpacer_8, 7, 0, 1, 1);
-
-        label_11 = new QLabel(centralWidget);
-        label_11->setObjectName(QStringLiteral("label_11"));
-
-        gridLayout_8->addWidget(label_11, 4, 0, 1, 1);
 
         verticalSpacer_9 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -514,11 +539,6 @@ public:
 
         gridLayout_8->addWidget(label_13, 8, 0, 1, 1);
 
-        label_3 = new QLabel(centralWidget);
-        label_3->setObjectName(QStringLiteral("label_3"));
-
-        gridLayout_8->addWidget(label_3, 0, 0, 1, 1);
-
         verticalSpacer_6 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout_8->addItem(verticalSpacer_6, 3, 0, 1, 1);
@@ -528,22 +548,124 @@ public:
 
         gridLayout_8->addWidget(label_10, 2, 0, 1, 1);
 
-        pushButton_11 = new QPushButton(centralWidget);
-        pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
-
-        gridLayout_8->addWidget(pushButton_11, 12, 1, 1, 1);
-
         verticalSpacer_13 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout_8->addItem(verticalSpacer_13, 11, 1, 1, 1);
 
+        pushButton_11 = new QPushButton(centralWidget);
+        pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
 
-        horizontalLayout_6->addLayout(gridLayout_8);
+        gridLayout_8->addWidget(pushButton_11, 13, 1, 1, 1);
+
+        lcdNumber_12 = new QLCDNumber(centralWidget);
+        lcdNumber_12->setObjectName(QStringLiteral("lcdNumber_12"));
+        QFont font1;
+        font1.setFamily(QStringLiteral("Monospace"));
+        lcdNumber_12->setFont(font1);
+        lcdNumber_12->setDigitCount(4);
+        lcdNumber_12->setMode(QLCDNumber::Hex);
+        lcdNumber_12->setSegmentStyle(QLCDNumber::Flat);
+
+        gridLayout_8->addWidget(lcdNumber_12, 12, 2, 1, 1);
+
+        lcdNumber_11 = new QLCDNumber(centralWidget);
+        lcdNumber_11->setObjectName(QStringLiteral("lcdNumber_11"));
+        QPalette palette1;
+        palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette1.setBrush(QPalette::Active, QPalette::Button, brush1);
+        palette1.setBrush(QPalette::Active, QPalette::Light, brush1);
+        palette1.setBrush(QPalette::Active, QPalette::Midlight, brush1);
+        palette1.setBrush(QPalette::Active, QPalette::Dark, brush2);
+        palette1.setBrush(QPalette::Active, QPalette::Mid, brush3);
+        palette1.setBrush(QPalette::Active, QPalette::Text, brush);
+        palette1.setBrush(QPalette::Active, QPalette::BrightText, brush1);
+        palette1.setBrush(QPalette::Active, QPalette::ButtonText, brush);
+        palette1.setBrush(QPalette::Active, QPalette::Base, brush1);
+        palette1.setBrush(QPalette::Active, QPalette::Window, brush1);
+        palette1.setBrush(QPalette::Active, QPalette::Shadow, brush);
+        palette1.setBrush(QPalette::Active, QPalette::AlternateBase, brush1);
+        palette1.setBrush(QPalette::Active, QPalette::ToolTipBase, brush4);
+        palette1.setBrush(QPalette::Active, QPalette::ToolTipText, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Button, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::Light, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::Midlight, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::Dark, brush2);
+        palette1.setBrush(QPalette::Inactive, QPalette::Mid, brush3);
+        palette1.setBrush(QPalette::Inactive, QPalette::Text, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::BrightText, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Base, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::Window, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::Shadow, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush4);
+        palette1.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
+        palette1.setBrush(QPalette::Disabled, QPalette::Button, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Light, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Midlight, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Dark, brush2);
+        palette1.setBrush(QPalette::Disabled, QPalette::Mid, brush3);
+        palette1.setBrush(QPalette::Disabled, QPalette::Text, brush2);
+        palette1.setBrush(QPalette::Disabled, QPalette::BrightText, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::ButtonText, brush2);
+        palette1.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Window, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Shadow, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush4);
+        palette1.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush);
+        lcdNumber_11->setPalette(palette1);
+        lcdNumber_11->setFont(font1);
+        lcdNumber_11->setDigitCount(4);
+        lcdNumber_11->setMode(QLCDNumber::Hex);
+        lcdNumber_11->setSegmentStyle(QLCDNumber::Flat);
+
+        gridLayout_8->addWidget(lcdNumber_11, 12, 1, 1, 1);
+
+
+        gridLayout->addLayout(gridLayout_8, 0, 6, 1, 1);
+
+        line_3 = new QFrame(centralWidget);
+        line_3->setObjectName(QStringLiteral("line_3"));
+        line_3->setFrameShape(QFrame::HLine);
+        line_3->setFrameShadow(QFrame::Sunken);
+
+        gridLayout->addWidget(line_3, 1, 6, 1, 1);
+
+        line_4 = new QFrame(centralWidget);
+        line_4->setObjectName(QStringLiteral("line_4"));
+        line_4->setFrameShape(QFrame::VLine);
+        line_4->setFrameShadow(QFrame::Sunken);
+
+        gridLayout->addWidget(line_4, 2, 4, 1, 1);
+
+        line_7 = new QFrame(centralWidget);
+        line_7->setObjectName(QStringLiteral("line_7"));
+        line_7->setFrameShape(QFrame::HLine);
+        line_7->setFrameShadow(QFrame::Sunken);
+
+        gridLayout->addWidget(line_7, 1, 0, 1, 1);
+
+        line_6 = new QFrame(centralWidget);
+        line_6->setObjectName(QStringLiteral("line_6"));
+        line_6->setFrameShape(QFrame::HLine);
+        line_6->setFrameShadow(QFrame::Sunken);
+
+        gridLayout->addWidget(line_6, 1, 3, 1, 1);
+
+        line_5 = new QFrame(centralWidget);
+        line_5->setObjectName(QStringLiteral("line_5"));
+        line_5->setFrameShape(QFrame::VLine);
+        line_5->setFrameShadow(QFrame::Sunken);
+
+        gridLayout->addWidget(line_5, 2, 2, 1, 1);
 
         epos3->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(epos3);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 874, 19));
+        menuBar->setGeometry(QRect(0, 0, 891, 19));
         epos3->setMenuBar(menuBar);
         mainToolBar = new QToolBar(epos3);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -560,20 +682,6 @@ public:
     void retranslateUi(QMainWindow *epos3)
     {
         epos3->setWindowTitle(QApplication::translate("epos3", "epos3", 0));
-        label->setText(QApplication::translate("epos3", "Settings", 0));
-        label_4->setText(QApplication::translate("epos3", "Operation Mode", 0));
-        comboBox->clear();
-        comboBox->insertItems(0, QStringList()
-         << QApplication::translate("epos3", "PPM", 0)
-         << QApplication::translate("epos3", "PVM", 0)
-        );
-        label_6->setText(QApplication::translate("epos3", "Target Position", 0));
-        label_5->setText(QApplication::translate("epos3", "Target Velocity", 0));
-        label_7->setText(QApplication::translate("epos3", "TextLabel", 0));
-        lineEdit->setText(QApplication::translate("epos3", "100000", 0));
-        lineEdit_2->setText(QApplication::translate("epos3", "1000", 0));
-        lineEdit_3->setText(QApplication::translate("epos3", "0", 0));
-        pushButton_10->setText(QApplication::translate("epos3", "Apply", 0));
         pushButton_7->setText(QApplication::translate("epos3", "Pause", 0));
         pushButton_4->setText(QApplication::translate("epos3", "Move Backward", 0));
         pushButton->setText(QApplication::translate("epos3", "Move Backward", 0));
@@ -588,13 +696,28 @@ public:
         label_8->setText(QApplication::translate("epos3", "Motor 1", 0));
         pushButton_8->setText(QApplication::translate("epos3", "Stop", 0));
         label_16->setText(QApplication::translate("epos3", "Change velocity", 0));
+        label->setText(QApplication::translate("epos3", "Settings", 0));
+        label_4->setText(QApplication::translate("epos3", "Operation Mode", 0));
+        comboBox->clear();
+        comboBox->insertItems(0, QStringList()
+         << QApplication::translate("epos3", "PVM", 0)
+         << QApplication::translate("epos3", "PPM", 0)
+        );
+        label_6->setText(QApplication::translate("epos3", "Target Position", 0));
+        label_5->setText(QApplication::translate("epos3", "Target Velocity", 0));
+        label_7->setText(QApplication::translate("epos3", "TextLabel", 0));
+        lineEdit->setText(QApplication::translate("epos3", "100000", 0));
+        lineEdit_2->setText(QApplication::translate("epos3", "1000", 0));
+        lineEdit_3->setText(QApplication::translate("epos3", "0", 0));
+        pushButton_10->setText(QApplication::translate("epos3", "Apply and Record", 0));
+        label_19->setText(QApplication::translate("epos3", "Data recorder status", 0));
+        label_3->setText(QApplication::translate("epos3", "Monitor", 0));
         label_18->setText(QApplication::translate("epos3", "Motor 2", 0));
         label_17->setText(QApplication::translate("epos3", "Motor 1", 0));
         label_14->setText(QApplication::translate("epos3", "Status Word", 0));
         label_12->setText(QApplication::translate("epos3", "Actual Velocity", 0));
         label_11->setText(QApplication::translate("epos3", "Actual Position", 0));
         label_13->setText(QApplication::translate("epos3", "Control Word", 0));
-        label_3->setText(QApplication::translate("epos3", "Monitor", 0));
         label_10->setText(QApplication::translate("epos3", "Actual Operation Mode", 0));
         pushButton_11->setText(QApplication::translate("epos3", "Read Values", 0));
     } // retranslateUi

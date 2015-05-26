@@ -23,6 +23,7 @@ CommandList commandList;
 string binaryBaseName;
 string commandName;
 Command::StringVector commandArgs;
+Command::StringVector dataBuffer;
 
 // option variables
 string masters = "-"; // all masters
@@ -39,6 +40,7 @@ string skin;
 
 void initEPOS3();
 int sendUploadCommand(string, string, string, string);
+int sendUploadCommandBuffer(string, string, string, string);
 int sendDownloadCommand(string, string, string, string, string);
 void moveMotor(string, string, string );
 

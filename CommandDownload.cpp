@@ -33,6 +33,7 @@ using namespace std;
 
 #include "CommandDownload.h"
 #include "MasterDevice.h"
+#include <QElapsedTimer>
 
 /*****************************************************************************/
 
@@ -225,7 +226,12 @@ void CommandDownload::execute(const StringVector &args)
     }
 
     try {
+
+        QElapsedTimer timer;
+        timer.start();
         m.sdoDownload(&data);
+        cout<<"sdoDownload: "<<timer.nsecsElapsed()<<endl;
+
     } catch (MasterDeviceSdoAbortException &e) {
         delete [] data.data;
         err << "SDO transfer aborted with code 0x"

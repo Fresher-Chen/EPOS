@@ -1,0 +1,14 @@
+# RLINSMOD - RTAI-Lab Insmod.
+# Inserts RTAI modules in kernel and configures the drivers.
+insmod /usr/realtime/modules/rtai_smi.ko # only if you have an INTEL chipset
+insmod /usr/realtime/modules/rtai_hal.ko rtai_cpufreq_arg=2393961000 rtai_apicfreq_arg=8312389
+insmod /usr/realtime/modules/rtai_lxrt.ko SetupTimeTIMER=50000 Latency=40000
+insmod /usr/realtime/modules/rtai_fifos.ko
+insmod /usr/realtime/modules/rtai_sem.ko
+insmod /usr/realtime/modules/rtai_mbx.ko
+insmod /usr/realtime/modules/rtai_msg.ko
+insmod /usr/realtime/modules/rtai_netrpc.ko
+insmod /usr/realtime/modules/rtai_shm.ko
+insmod /usr/realtime/modules/rtai_rtdm.ko
+insmod /usr/realtime/modules/rtai_calibrate.ko
+# modprobe -r uhci-hcd # trick to avoid shared interrupts with uhci_hcd devices

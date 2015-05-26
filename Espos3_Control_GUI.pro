@@ -6,12 +6,12 @@
 
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 TARGET = Espos3_Control_GUI
 TEMPLATE = app
 
-INCLUDEPATH +=  /home/oscar/Documents/RTAI/ethercat-1.5.2/ \
+INCLUDEPATH +=  /home/oscar/Documents/RTAI/ethercat-1.5.2/ \                
               /home/oscar/Documents/RTAI/ethercat-1.5.2/include2/.
 
 
@@ -26,7 +26,8 @@ SOURCES += Command.cpp \
            main.cpp \
            MasterDevice.cpp \
            NumberListParser.cpp \
-           SdoCommand.cpp
+           SdoCommand.cpp \
+    qcustomplot.cpp
 
 HEADERS  += Command.h \
            CommandDownload.h \
@@ -45,7 +46,9 @@ HEADERS  += Command.h \
            ../globals.h \
            ../config.h \
            ../include2/ecrt.h \
-           ../lib/ioctl.h
+           ../lib/ioctl.h \
+    qcustomplot.h
+
 
 FORMS    += epos3.ui
 
